@@ -1,1 +1,2 @@
-alert("test")
+console.log("Start Program.")
+console.log("End Program.")
