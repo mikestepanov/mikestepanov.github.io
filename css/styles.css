@@ -16,6 +16,11 @@
   flex: 1;
 }
 
+.row {
+  flex: 1;
+}
+
+
 
 .main_footer {
   height: 10vh;
