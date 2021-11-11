@@ -14,6 +14,14 @@ function Form() {
   const [isValidatingPassword, setIsValidatingPassword] = useState(false)
   const [isValidatingUsername, setiIsValidatingUsername] = useState(false)
 
+  function isPasswordValid() {
+    return password === confrimPassword && password !== ''
+  }
+
+  function isUserNameValid() {
+    return username !== ''
+  }
+
   function isFormValid() {
     let isValid = true
     if (!isUserNameValid()) {
@@ -24,14 +32,6 @@ function Form() {
       isValid = false
       setIsValidatingPassword(true)
     }
-  }
-
-  function isPasswordValid() {
-    return password === confrimPassword
-  }
-
-  function isUserNameValid() {
-    return username !== ''
   }
 
   function handleUsernameChange(e) {
@@ -74,8 +74,8 @@ function Form() {
  
   return (
     <div className="form">
-      {isValidatingPassword && <h1>Password mismatch</h1>}
-      {isValidatingUsername && <h1>No username</h1>}
+      {isValidatingPassword && <h1>Password mismatch / Password is empty</h1>}
+      {isValidatingUsername && <h1>Username is empty</h1>}
       <div className="formLine">
         <label htmlFor="username">Username</label>
         <input width={300} id="username" value={username} onChange={handleUsernameChange} />
