@@ -32,7 +32,6 @@ function Form() {
       isValid = false
       setIsValidatingPassword(true)
     }
-    return isValid
   }
 
   function handleUsernameChange(e) {
